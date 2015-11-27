@@ -1,11 +1,11 @@
 #include "Summarizer.h"
 
 
-Summarizer::Summarizer(void)
+IRProject::Summarizer::Summarizer(void)
 {
 }
 
 
-Summarizer::~Summarizer(void)
+IRProject::Summarizer::~Summarizer(void)
 {
 }

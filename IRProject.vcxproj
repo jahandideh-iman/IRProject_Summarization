@@ -79,10 +79,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GrapgBasedSummarizer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SentenceExtractor.cpp" />
+    <ClCompile Include="SentenceGraphConstructor.cpp" />
+    <ClCompile Include="SentenceScorer.cpp" />
     <ClCompile Include="Summarizer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GraphBasedSummarizer.h" />
+    <ClInclude Include="SentenceExtractor.h" />
+    <ClInclude Include="SentenceGraphConstructor.h" />
+    <ClInclude Include="SentenceScorer.h" />
     <ClInclude Include="Summarizer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -2,12 +2,14 @@
 
 #include <vector>
 
-class Summarizer
+namespace IRProject
 {
-public:
-	Summarizer(void);
-	~Summarizer(void);
+	class Summarizer
+	{
+	public:
+		Summarizer(void);
+		virtual ~Summarizer(void);
 
-	virtual std::vector<std::string> summarize() = 0;
-};
-
+		virtual std::vector<std::string> summarize() = 0;
+	};
+}
