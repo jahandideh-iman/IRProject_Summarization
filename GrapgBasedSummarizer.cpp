@@ -1,7 +1,7 @@
 #include "GraphBasedSummarizer.h"
 
 
-IRProject::GraphBasedSummarizer::GraphBasedSummarizer(SentenceGraphConstructor *graphConstructor, SentenceScorer *scorer, SentenceExtractor *extractor)
+IRProject::GraphBasedSummarizer::GraphBasedSummarizer(UnitGraphConstructor *graphConstructor, UnitScorer *scorer, UnitExtractor *extractor)
 {
 	this->graphConstructor = graphConstructor;
 	this->scorer = scorer;
@@ -17,5 +17,5 @@ std::vector<std::string> IRProject::GraphBasedSummarizer::summarize()
 {
 	graphConstructor->constructGraph();
 	scorer->computeScores();
-	return extractor->extractSentences();
+	return extractor->extractUnits();
 }

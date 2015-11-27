@@ -1,8 +1,8 @@
 #pragma once
 #include "summarizer.h"
-#include "SentenceGraphConstructor.h"
-#include "SentenceScorer.h"
-#include "SentenceExtractor.h"
+#include "UnitGraphConstructor.h"
+#include "UnitScorer.h"
+#include "UnitExtractor.h"
 
 namespace IRProject
 {
@@ -10,14 +10,14 @@ namespace IRProject
 		public Summarizer
 	{
 	public:
-		GraphBasedSummarizer(SentenceGraphConstructor *graphConstructor, SentenceScorer *scorer, SentenceExtractor *extractor);
+		GraphBasedSummarizer(UnitGraphConstructor *graphConstructor, UnitScorer *scorer, UnitExtractor *extractor);
 		~GraphBasedSummarizer(void);
 
 		std::vector<std::string> summarize() override;
 
 	private:
-		SentenceGraphConstructor *graphConstructor;
-		SentenceScorer *scorer;
-		SentenceExtractor *extractor;
+		UnitGraphConstructor *graphConstructor;
+		UnitScorer *scorer;
+		UnitExtractor *extractor;
 	};
 }

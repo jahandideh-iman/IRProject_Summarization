@@ -24,13 +24,13 @@
     <ClCompile Include="GrapgBasedSummarizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SentenceGraphConstructor.cpp">
+    <ClCompile Include="UnitExtractor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SentenceScorer.cpp">
+    <ClCompile Include="UnitGraphConstructor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SentenceExtractor.cpp">
+    <ClCompile Include="UnitScorer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,13 +41,13 @@
     <ClInclude Include="GraphBasedSummarizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SentenceGraphConstructor.h">
+    <ClInclude Include="UnitExtractor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SentenceScorer.h">
+    <ClInclude Include="UnitScorer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SentenceExtractor.h">
+    <ClInclude Include="UnitGraphConstructor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

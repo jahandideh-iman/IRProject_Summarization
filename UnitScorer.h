@@ -2,11 +2,11 @@
 
 namespace IRProject
 {
-	class SentenceScorer
+	class UnitScorer
 	{
 	public:
-		SentenceScorer(void);
-		virtual ~SentenceScorer(void);
+		UnitScorer(void);
+		virtual ~UnitScorer(void);
 
 		virtual void computeScores() = 0;
 	};
