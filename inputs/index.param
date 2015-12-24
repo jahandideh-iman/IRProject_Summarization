@@ -1,0 +1,8 @@
+<parameters>
+<index>Index/index2</index>
+<indexType>key</indexType>
+<countStopWords>false</countStopWords>
+<memory>512000000</memory>
+<docFormat>Arabic</docFormat>
+<dataFiles>inputs/dataPath.data</dataFiles>
+</parameters>

@@ -21,9 +21,6 @@
     <ClCompile Include="Summarizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GrapgBasedSummarizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="UnitExtractor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -31,6 +28,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UnitScorer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CosinSimGraphConstructor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Clusterer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KMeansClusterer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterBasedConditionalMarkovRandomWalk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphBasedSummarizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MinimumDominatingSetSummarizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -48,6 +63,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UnitGraphConstructor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CosinSimGraphConstructor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Clusterer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KMeansClusterer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClusterBasedConditionalMarkovRandomWalk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MinimumDominatingSetSummarizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

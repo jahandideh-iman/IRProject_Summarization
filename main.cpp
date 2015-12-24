@@ -1,10 +1,9 @@
 #include "Param.hpp"
-#include "BasicSumm.hpp"
 #include "IndexManager.hpp"
 #include <iostream>
-
+#include "ClusterBasedConditionalMarkovRandomWalk.h"
+#include "MinimumDominatingSetSummarizer.h"
 using namespace lemur::api;
-using namespace lemur::summarization;
 
 namespace LocalParameter {
 	std::string index;   
@@ -22,18 +21,17 @@ void GetAppParam() {
 	LocalParameter::get();
 }
 
-int AppMain(int argc, char* argv[]) {
-	lemur::api::Index * idx = IndexManager::openIndex(LocalParameter::index);
+int main(int argc, char* argv[]) {
+	int a = 0;
+
+	//lemur::api::Index * idx = IndexManager::openIndex(LocalParameter::index);
+	lemur::api::Index * idx = IndexManager::openIndex("Index/index.key");
+
+	IRProject::MinimumDominatingSetSummarizer summerizer(0.8,idx);
+	std::vector<int> result = summerizer.summarize();
 
 
-	// Create a basic summarizer
-	lemur::summarization::BasicSumm* s = new lemur::summarization::BasicSumm(idx);
-	// Generate a summary
-	// NULL is not valid for an empty string
-	//  s->summDocument(LocalParameter::docID, LocalParameter::summLength, NULL);
-	s->summDocument(LocalParameter::docID, LocalParameter::summLength, "");
-	// Print to stdout
-	s->outputSumm();
+	auto d = idx->docManager(1);
 	delete(idx);
 	return 0;
 }

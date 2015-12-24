@@ -1,0 +1,210 @@
+<DOC>
+<DOCNO> 1 </DOCNO>
+<TEXT>
+19593475619	2	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to provide adequate medical care as a matter of urgency to Masoud Bastani v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 2 </DOCNO>
+<TEXT>
+19593516070	3	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Rahim Gholami v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 3 </DOCNO>
+<TEXT>
+19593564842	6	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Mojtaba Lotfi v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 4 </DOCNO>
+<TEXT>
+19593534730	5	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Nader Karimi v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 5 </DOCNO>
+<TEXT>
+19593524934	3	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Kouyhar Goudarzi v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 6 </DOCNO>
+<TEXT>
+19593733740	6	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Behrouz Tehrani v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 7 </DOCNO>
+<TEXT>
+19593554276	1	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to M Sadegh Kaboudvand v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 8 </DOCNO>
+<TEXT>
+19593717547	7	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Behrouz Tavakoli v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 9 </DOCNO>
+<TEXT>
+19593693372	5	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Ali Saremi v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 10 </DOCNO>
+<TEXT>
+19593673558	4	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Hamed Rouhinejad v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 11 </DOCNO>
+<TEXT>
+20080109920	1	RT @vprotest vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to M Sadegh K...  http://
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 12 </DOCNO>
+<TEXT>
+20078507208	1	RT @vprotest vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Behrouz Te...  http://
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 13 </DOCNO>
+<TEXT>
+20078869342	1	RT @vprotest vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Hengameh S...  http://
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 14 </DOCNO>
+<TEXT>
+19593743753	3	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Ahmad Zeidabadi v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 15 </DOCNO>
+<TEXT>
+19593701602	2	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Hengameh Shahidi v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 16 </DOCNO>
+<TEXT>
+19593492084	2	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to provide adequate medical care as a matter of urgency to Ayat Boroujerdi v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 17 </DOCNO>
+<TEXT>
+19593543518	3	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Mansour Ossanlou v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 18 </DOCNO>
+<TEXT>
+19593577687	3	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Mehdi Mahmoudian v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 19 </DOCNO>
+<TEXT>
+19593619384	3	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Saieed Matinpour v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 20 </DOCNO>
+<TEXT>
+19593684906	5	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Issa Saharkhiz v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 21 </DOCNO>
+<TEXT>
+20081035109	1	RT @vprotest vprotest: #IranElection #Amnesty & #RSF urge IRI to provide adequate medical care as a matter of urgency to Ayat Bo...  http://
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 22 </DOCNO>
+<TEXT>
+20079516314	1	RT @vprotest vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Abolfazi A...  http://
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 23 </DOCNO>
+<TEXT>
+20078236598	1	RT @vprotest vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Ahmad Zeid...  http://
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 24 </DOCNO>
+<TEXT>
+20079651206	1	RT @vprotest vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Saieed Mat...  http://
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 25 </DOCNO>
+<TEXT>
+20079864022	2	RT @vprotest vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Mehdi Mahm...  http://
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 26 </DOCNO>
+<TEXT>
+20079355839	1	RT @vprotest vprotest: #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Hamed Rouh...  http://
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 27 </DOCNO>
+<TEXT>
+19579784313	4	#IranElection #Amnesty & #RSF urge IRI to provide adequate medical care as a matter of urgency to Masoud Lavassani v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 28 </DOCNO>
+<TEXT>
+19593468590	2	V @vprotest: #IranElection #Amnesty & #RSF urge IRI to provide adequate medical care as a matter of urgency to Shiva Nazar Ahari v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 29 </DOCNO>
+<TEXT>
+19590903067	4	v @vprotest #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Abolfazi Abedini Nasr v @Sonja_Jo
+</TEXT>
+</DOC>
+
+<DOC>
+<DOCNO> 30 </DOCNO>
+<TEXT>
+19593506291	3	V @vprotest #IranElection #Amnesty & #RSF urge IRI to give adequate medical care as a matter of urgency to Amir Khosro Dalirsani v @Sonja_Jo
+</TEXT>
+</DOC>
+
