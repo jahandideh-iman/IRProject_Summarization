@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IRProject", "IRProject.vcxp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "summarization", "..\..\..\..\..\Program Files\Lemur\Lemur 4.12\src\summarization\summarization-VS2008.vcxproj", "{071C9F65-1F19-46C3-B230-D37616DFF17D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Converter", "..\Converter\Converter.vcxproj", "{39D61663-C399-4257-A550-2CFE8CBE324B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -26,6 +28,12 @@ Global
 		{071C9F65-1F19-46C3-B230-D37616DFF17D}.Release|Win32.Build.0 = Release|Win32
 		{071C9F65-1F19-46C3-B230-D37616DFF17D}.Release|x64.ActiveCfg = Release|x64
 		{071C9F65-1F19-46C3-B230-D37616DFF17D}.Release|x64.Build.0 = Release|x64
+		{39D61663-C399-4257-A550-2CFE8CBE324B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{39D61663-C399-4257-A550-2CFE8CBE324B}.Debug|Win32.Build.0 = Debug|Win32
+		{39D61663-C399-4257-A550-2CFE8CBE324B}.Debug|x64.ActiveCfg = Debug|Win32
+		{39D61663-C399-4257-A550-2CFE8CBE324B}.Release|Win32.ActiveCfg = Release|Win32
+		{39D61663-C399-4257-A550-2CFE8CBE324B}.Release|Win32.Build.0 = Release|Win32
+		{39D61663-C399-4257-A550-2CFE8CBE324B}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

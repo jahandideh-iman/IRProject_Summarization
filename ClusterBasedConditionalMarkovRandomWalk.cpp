@@ -1,88 +1,84 @@
 #include "ClusterBasedConditionalMarkovRandomWalk.h"
-#include "KMeansClusterer.h"
 #include "Matrix.h"
 #include "CosSim.hpp"
+#include "Types.h"
 
 namespace IRProject
 {
-	struct ClusterInfo{
-
-		ClusterInfo()
-		{
-			cluster = nullptr;
-			weight  = 0;
-		}
-
-		ClusterInfo(Cluster *c, double w)
-		{
-			cluster = c;
-			weight  = w;
-		}
-		Cluster *cluster;
-		double weight;
-	};
-
-	struct DocInfo{
-
-		DocInfo()
-		{
-			cluster = nullptr;
-			weight  = 0;
-		}
-
-		DocInfo(Cluster *c, double w)
-		{
-			cluster = c;
-			weight  = w;
-		}
-		Cluster *cluster;
-		double weight;
-	};
+	
 }
 
-IRProject::ClusterBasedConditionalMarkovRandomWalk::ClusterBasedConditionalMarkovRandomWalk(Index *index)
+IRProject::ClusterBasedConditionalMarkovRandomWalk::ClusterBasedConditionalMarkovRandomWalk(Index *index) 
+	: ClusterBasedSummarizer(index)
 {
-
-	this->index = index;
-	std::vector<int> docs;
-	for(int i = 1 ; i<= index->docCount(); i++)
-	{
-		docs.push_back(i);
-	}
-	docsSetCluster = new ClusterRep(docs,*index);
+	lambda = 0.5;
 }
-
 
 IRProject::ClusterBasedConditionalMarkovRandomWalk::~ClusterBasedConditionalMarkovRandomWalk(void)
 {
-	delete docsSetCluster;
+
 }
 
-std::vector<std::string> IRProject::ClusterBasedConditionalMarkovRandomWalk::summarize()
+void IRProject::ClusterBasedConditionalMarkovRandomWalk::initialAdjacencyMatrix(Matrix &m, const std::vector<ClusterInfo> &clusters)
 {
-	KMeansClusterer clusterer(index,std::sqrt(index->docCount()));
-	std::vector<Cluster *> *clusters = clusterer.cluster();
+	std::vector<DocInfo> docs(docsCount+1);
+	initialDocsInfo(docs, clusters);
 
-	unsigned clustersCount = clusters->size();
-	unsigned docsCount = index->docCount();
+	m.resize(docsCount+1);
 
-	std::vector<ClusterInfo> clustersInfo(clustersCount);
-	Matrix<DocInfo> docsInfo(docsCount,docsCount);
-	
-	for( unsigned i = 0 ; i < clustersCount; i++)
+	for(int i = 1 ; i<= docsCount ; i++)
 	{
-		clustersInfo[i].cluster = (*clusters)[i];
-		clustersInfo[i].weight = computeClusterWeight((*clusters)[i]);
+		m[i].resize(docsCount+1);
+		ClusterRep docRepI(i,*index);
+		for(int j = 1 ; j<= docsCount ; j++)
+		{
+			ClusterRep docRepJ(j,*index);
+			double sim = cosSim->similarity(&docRepI, &docRepJ);
+			m[i][j] = sim * (lambda* docs[i].clusterInfo->weight * docs[i].weight) + ((1-lambda) * docs[j].clusterInfo->weight * docs[j].weight );
+		}
 	}
 
-
-	delete clusters;
-	std::vector<std::string> senteces;
-	return senteces;
+	normalize(m);
 }
 
-double IRProject::ClusterBasedConditionalMarkovRandomWalk::computeClusterWeight(Cluster *cluster)
+void IRProject::ClusterBasedConditionalMarkovRandomWalk::initialDocsInfo(std::vector<DocInfo> &docs, const std::vector<ClusterInfo> &clusters)
 {
-	lemur::cluster::CosSim s(*index);
-	return s.similarity(cluster->getClusterRep(),docsSetCluster);
+	for(auto cInfo : clusters)
+	{
+		for(auto id : cInfo.cluster->getDocIds())
+		{
+			ClusterRep docRep(id,*index);
+			docs[id].clusterInfo  = &cInfo;
+			docs[id].weight = cosSim->similarity(cInfo.cluster->getClusterRep(), &docRep);
+		}
+	}
+}
+
+std::vector<double> IRProject::ClusterBasedConditionalMarkovRandomWalk::computeSentencesScore(Matrix &m)
+{
+	std::vector<double> currentDocP(docsCount+1,1);
+	std::vector<double> nextDocP(docsCount+1,1);
+
+	double beta = 0.85;
+	while(true)
+	{
+		for(int i = 1 ; i <= docsCount; i++)
+		{
+			nextDocP[i] = (1 - beta) / docsCount;
+			for(int j = 1 ; j <= docsCount; j++)
+			{
+				if(i != j)
+				{
+					nextDocP[i]+= beta * currentDocP[j] * m[j][i];
+				}
+			}
+		}
+
+		nextDocP.swap(currentDocP);
+
+		if(isUnderThreshold(currentDocP,nextDocP,1, 0.0001))
+			break;
+	}
+
+	return currentDocP;
 }

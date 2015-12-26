@@ -2,7 +2,7 @@
 
 namespace IRProject
 {
-	template<class T>
+	/*template<class T>
 	class Matrix
 	{
 	public:
@@ -12,10 +12,11 @@ namespace IRProject
 			this->columns = columns;
 		};
 
+
 	private:
 		unsigned rows;
 		unsigned columns;
 	};
-
+*/
 	
 }

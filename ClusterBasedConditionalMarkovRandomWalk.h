@@ -1,24 +1,26 @@
 #pragma once
 
-#include "Summarizer.h"
+#include "ClusterBasedSummarizer.h"
 #include "Types.h"
 
 namespace IRProject
 {
-	class ClusterBasedConditionalMarkovRandomWalk : public Summarizer
+	class ClusterBasedConditionalMarkovRandomWalk : public ClusterBasedSummarizer
 	{
 	public:
 		ClusterBasedConditionalMarkovRandomWalk(Index *index);
 		~ClusterBasedConditionalMarkovRandomWalk(void);
 
-		virtual std::vector<std::string> summarize();
+
+	protected:
+		std::vector<double> computeSentencesScore(Matrix &m) override;
+		void initialAdjacencyMatrix(Matrix &m, const std::vector<ClusterInfo> &clusters) override;
 
 	private:
-		double computeClusterWeight(Cluster *cluster);
+		void initialDocsInfo(std::vector<DocInfo> &docs, const std::vector<ClusterInfo> &clusters);
 
 	private:
-		Index *index;
-		ClusterRep *docsSetCluster;
+		double lambda;
 	};
 }
 

@@ -21,18 +21,6 @@
     <ClCompile Include="Summarizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UnitExtractor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitGraphConstructor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitScorer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CosinSimGraphConstructor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Clusterer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -42,10 +30,13 @@
     <ClCompile Include="ClusterBasedConditionalMarkovRandomWalk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GraphBasedSummarizer.cpp">
+    <ClCompile Include="MinimumDominatingSetSummarizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MinimumDominatingSetSummarizer.cpp">
+    <ClCompile Include="ClusterBasedHITS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterBasedSummarizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,22 +44,7 @@
     <ClInclude Include="Summarizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GraphBasedSummarizer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UnitExtractor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UnitScorer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UnitGraphConstructor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CosinSimGraphConstructor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Clusterer.h">
@@ -84,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MinimumDominatingSetSummarizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClusterBasedHITS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClusterBasedSummarizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,35 +3,25 @@
 #include <iostream>
 #include "ClusterBasedConditionalMarkovRandomWalk.h"
 #include "MinimumDominatingSetSummarizer.h"
+#include "ClusterBasedHITS.h"
 using namespace lemur::api;
-
-namespace LocalParameter {
-	std::string index;   
-	std::string docID;
-	int summLength;   
-	void get() {
-		index  = ParamGetString("index");
-		docID = ParamGetString("docID");
-		summLength   = ParamGetInt("summLength", 5);
-
-	}    
-};
-
-void GetAppParam() {
-	LocalParameter::get();
-}
 
 int main(int argc, char* argv[]) {
 	int a = 0;
-
+	std::vector<int> result;
 	//lemur::api::Index * idx = IndexManager::openIndex(LocalParameter::index);
-	lemur::api::Index * idx = IndexManager::openIndex("Index/index.key");
+	lemur::api::Index * idx = IndexManager::openIndex("Index/index2.key");
 
-	IRProject::MinimumDominatingSetSummarizer summerizer(0.8,idx);
-	std::vector<int> result = summerizer.summarize();
+	//IRProject::MinimumDominatingSetSummarizer summerizer(0.8,idx);
+	IRProject::ClusterBasedConditionalMarkovRandomWalk MRWSummerizer(idx);
 
+	result = MRWSummerizer.summarize();
+	printf("ClusterBasedConditionalMarkovRandomWalk : %d \n", result[0]);
 
-	auto d = idx->docManager(1);
+	IRProject::ClusterBasedHITS HITSSummerizer(idx);
+	result = HITSSummerizer.summarize();
+	printf("ClusterBasedHITS : %d \n", result[0]);
+
 	delete(idx);
 	return 0;
 }

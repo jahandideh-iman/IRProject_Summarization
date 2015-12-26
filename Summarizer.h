@@ -10,6 +10,6 @@ namespace IRProject
 		Summarizer(void);
 		virtual ~Summarizer(void);
 
-		virtual std::vector<std::string> summarize() = 0;
+		virtual std::vector<int> summarize() = 0;
 	};
 }
