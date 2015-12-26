@@ -1,5 +1,6 @@
 #include <string>
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -20,9 +21,18 @@ void convertedDoc(string inFileName, string outFileName) {
 	fout.close();
 }
 
-int main()
+int main(int argc, char* argv[]) 
 {
-	convertedDoc("data/1.txt", "data/1_out.txt");
+	if(argc != 3)
+	{
+		std::cerr << "Usage: " << argv[0] << " Input file path, Output file path" << std::endl;
+		return -1;
+	}
+
+	string inputPath = argv[1];
+	string outputPath = argv[2];
+
+	convertedDoc(inputPath, outputPath);
 
 	return 0;
 }

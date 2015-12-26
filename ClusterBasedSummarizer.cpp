@@ -83,7 +83,7 @@ void IRProject::ClusterBasedSummarizer::normalize(Matrix &m)
 		for(int j = 1 ; j<= docsCount ; j++)
 		{
 			m[i][j] = m[i][j] / sum;
-			printf("m[%d][%d] = %f \n",i,j,m[i][j]);
+			//printf("m[%d][%d] = %f \n",i,j,m[i][j]);
 		}
 	}
 }

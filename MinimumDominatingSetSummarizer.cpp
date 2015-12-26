@@ -67,7 +67,7 @@ vector<set<int>> IRProject::MinimumDominatingSetSummarizer::getAdjacencyGraph()
 				if(s.similarity(&doci,&docj) >= lambda)
 					graph[i].emplace(j);
 
-				std::cout<<s.similarity(&doci,&docj)<< std::endl;
+				//std::cout<<s.similarity(&doci,&docj)<< std::endl;
 			}
 		}
 	}
