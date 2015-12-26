@@ -11,12 +11,11 @@ IRProject::ClusterBasedHITS::~ClusterBasedHITS(void)
 {
 }
 
-
 void IRProject::ClusterBasedHITS::initialAdjacencyMatrix(Matrix &m,const std::vector<ClusterInfo> &clusters)
 {
-
 	int clustersCount = clusters.size();
 	m.resize(docsCount+1);
+
 	for(int i = 1 ; i<=docsCount; i++)
 	{
 		m[i].resize(clustersCount);
@@ -26,7 +25,6 @@ void IRProject::ClusterBasedHITS::initialAdjacencyMatrix(Matrix &m,const std::ve
 			m[i][j] = cosSim->similarity(&docRep, clusters[j].cluster->getClusterRep());
 		}
 	}
-
 }
 
 std::vector<double> IRProject::ClusterBasedHITS::computeSentencesScore(Matrix &m)
@@ -57,6 +55,7 @@ std::vector<double> IRProject::ClusterBasedHITS::computeSentencesScore(Matrix &m
 				nextHubScore[c] += m[d][c] * currentAuthScore[d];
 			}
 		}
+
 		nextAuthScore.swap(currentAuthScore);
 		nextHubScore.swap(currentHubScore);
 
