@@ -197,3 +197,5 @@ FakesAssemblies/
 
 # Custom Excludes
 lib/
+
+MainIndex/

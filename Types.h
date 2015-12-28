@@ -18,6 +18,12 @@ namespace IRProject
 
 	struct ClusterInfo{
 
+		ClusterInfo(const ClusterInfo &other)
+		{
+			cluster = other.cluster;
+			weight = other.weight;
+		}
+
 		ClusterInfo()
 		{
 			cluster = nullptr;
@@ -46,7 +52,7 @@ namespace IRProject
 			clusterInfo = c;
 			weight  = w;
 		}
-		ClusterInfo *clusterInfo;
+		const ClusterInfo *clusterInfo;
 		double weight;
 	};
 }

@@ -5,21 +5,39 @@
 #include "ClusterBasedConditionalMarkovRandomWalk.h"
 #include "MinimumDominatingSetSummarizer.h"
 #include "ClusterBasedHITS.h"
+#include <fstream>
+
 using namespace lemur::api;
+
 
 IRProject::Summarizer *createSummarizer(string type, Index *index);
 
+std::vector<string> extractLines(ifstream &originalText);
+
 int main(int argc, char* argv[]) 
 {
-	if(argc != 4)
+	if(argc != 5)
 	{
-		std::cerr << "Usage: " << argv[0] << " Summarization Type, Index Key Path, Output Path" << std::endl;
+		std::cerr << "Usage: " << argv[0] << " Summarization Type, Index Key Path, Output Path, Original Text path" << std::endl;
 		return -1;
 	}
 
 	string summarizationType = argv[1];
 	string indexKeyPath = argv[2];
 	string outputPath = argv[3];
+	string originalTextPath = argv[4];
+
+	ifstream originalText(originalTextPath);
+	if(originalText.is_open() == false)
+	{
+		std::cerr << "Could not open original text file" << std::endl;
+		return -1;
+	}
+
+	ofstream output;
+	output.open(outputPath);
+
+	std::vector<string> lines = extractLines(originalText);
 
 	lemur::api::Index * idx = IndexManager::openIndex(indexKeyPath);
 	IRProject::Summarizer *summarizer = createSummarizer(summarizationType, idx);
@@ -32,13 +50,17 @@ int main(int argc, char* argv[])
 
 	std::vector<int> result = summarizer->summarize();
 
-	printf("%s : %d \n", summarizationType.c_str() ,result[0]);
+	for(int i : result)
+	{
+		printf("%d \n", i);
+		output << lines[i-1] << std::endl;
+	}
 
+	output.close();
 	delete idx;
 	delete summarizer;
 	return 0;
 }
-
 
 IRProject::Summarizer *createSummarizer(string type, Index *index)
 {
@@ -50,4 +72,17 @@ IRProject::Summarizer *createSummarizer(string type, Index *index)
 		return new IRProject::ClusterBasedConditionalMarkovRandomWalk(index);
 
 	return nullptr;
+}
+
+std::vector<string> extractLines(ifstream &originalText)
+{
+	string line;
+	std::vector<string> res;
+	while ( getline(originalText,line) )
+	{
+		res.push_back(line);
+	}
+	originalText.close();
+
+	return res;
 }

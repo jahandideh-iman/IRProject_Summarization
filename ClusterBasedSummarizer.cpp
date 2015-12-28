@@ -78,7 +78,11 @@ void IRProject::ClusterBasedSummarizer::normalize(Matrix &m)
 		}
 
 		if(sum == 0) // TODO: normalize for zero row
-			printf("!!!!!!!!!!!!! ERROR !!!!!!!!!!!!!!");
+		{
+			printf("%d \n", i);
+			printf("!!!!!!!!!!!!! ERROR !!!!!!!!!!!!!! \n");
+			
+		}
 
 		for(int j = 1 ; j<= docsCount ; j++)
 		{

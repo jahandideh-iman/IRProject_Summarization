@@ -48,7 +48,7 @@ void IRProject::ClusterBasedConditionalMarkovRandomWalk::initialAdjacencyMatrix(
 
 void IRProject::ClusterBasedConditionalMarkovRandomWalk::initialDocsInfo(std::vector<DocInfo> &docs, const std::vector<ClusterInfo> &clusters)
 {
-	for(auto cInfo : clusters)
+	for(const ClusterInfo &cInfo : clusters)
 	{
 		for(auto id : cInfo.cluster->getDocIds())
 		{
