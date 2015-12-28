@@ -10,15 +10,15 @@
 using namespace lemur::api;
 
 
-IRProject::Summarizer *createSummarizer(string type, Index *index);
+IRProject::Summarizer *createSummarizer(string type, Index *index, double lambda);
 
 std::vector<string> extractLines(ifstream &originalText);
 
 int main(int argc, char* argv[]) 
 {
-	if(argc != 5)
+	if(argc != 6)
 	{
-		std::cerr << "Usage: " << argv[0] << " Summarization Type, Index Key Path, Output Path, Original Text path" << std::endl;
+		std::cerr << "Usage: " << argv[0] << " Summarization Type, Index Key Path, Output Path, Original Text path, Lambda" << std::endl;
 		return -1;
 	}
 
@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
 	string indexKeyPath = argv[2];
 	string outputPath = argv[3];
 	string originalTextPath = argv[4];
+	double lambda = atof(argv[5]);
 
 	ifstream originalText(originalTextPath);
 	if(originalText.is_open() == false)
@@ -40,7 +41,7 @@ int main(int argc, char* argv[])
 	std::vector<string> lines = extractLines(originalText);
 
 	lemur::api::Index * idx = IndexManager::openIndex(indexKeyPath);
-	IRProject::Summarizer *summarizer = createSummarizer(summarizationType, idx);
+	IRProject::Summarizer *summarizer = createSummarizer(summarizationType, idx, lambda);
 
 	if(summarizer == nullptr)
 	{
@@ -62,14 +63,14 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
-IRProject::Summarizer *createSummarizer(string type, Index *index)
+IRProject::Summarizer *createSummarizer(string type, Index *index, double lambda)
 {
 	if(type == "MDS")
-		return new IRProject::MinimumDominatingSetSummarizer(0.8,index);
+		return new IRProject::MinimumDominatingSetSummarizer(lambda,index);
 	else if(type == "CHITS")
 		return new IRProject::ClusterBasedHITS(index);
 	else if(type == "CMRW")
-		return new IRProject::ClusterBasedConditionalMarkovRandomWalk(index);
+		return new IRProject::ClusterBasedConditionalMarkovRandomWalk(lambda,index);
 
 	return nullptr;
 }

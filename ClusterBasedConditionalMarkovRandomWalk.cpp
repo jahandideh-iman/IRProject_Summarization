@@ -8,10 +8,10 @@ namespace IRProject
 	
 }
 
-IRProject::ClusterBasedConditionalMarkovRandomWalk::ClusterBasedConditionalMarkovRandomWalk(Index *index) 
+IRProject::ClusterBasedConditionalMarkovRandomWalk::ClusterBasedConditionalMarkovRandomWalk(double lambda, Index *index) 
 	: ClusterBasedSummarizer(index)
 {
-	lambda = 0.5;
+	this->lambda = lambda;
 }
 
 IRProject::ClusterBasedConditionalMarkovRandomWalk::~ClusterBasedConditionalMarkovRandomWalk(void)

@@ -8,7 +8,7 @@ namespace IRProject
 	class ClusterBasedConditionalMarkovRandomWalk : public ClusterBasedSummarizer
 	{
 	public:
-		ClusterBasedConditionalMarkovRandomWalk(Index *index);
+		ClusterBasedConditionalMarkovRandomWalk(double lambda, Index *index);
 		~ClusterBasedConditionalMarkovRandomWalk(void);
 
 

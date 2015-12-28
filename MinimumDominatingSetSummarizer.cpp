@@ -37,12 +37,21 @@ std::vector<int> IRProject::MinimumDominatingSetSummarizer::summarize()
 			break;
 		} else {
 			res.push_back(index+1);
-			for(int i = 0; i < adjList.size(); i++) {
-				if(adjList[i].find(index) != adjList[i].end())
-					flags[i] = true;
-					//adjList[i].erase(index);
-			}
+
 			flags[index] = true;
+			for(set<int>::iterator it = adjList[index].begin(); it != adjList[index].end(); it++) {
+				int ii = *(it);
+				flags[ii] = true;
+				for(int i = 0; i < adjList.size(); i++) {
+					if(flags[i] == false && adjList[i].find(ii) != adjList[i].end())
+						adjList[i].erase(ii);
+				}
+			}
+
+			for(int i = 0; i < adjList.size(); i++) {
+				if(flags[i] == false && adjList[i].find(index) != adjList[i].end())
+					adjList[i].erase(index);
+			}
 		}
 	}
 	return res;
