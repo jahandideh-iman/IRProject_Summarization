@@ -49,7 +49,7 @@ double IRProject::ClusterBasedSummarizer::computeClusterWeight(Cluster *cluster)
 	return s.similarity(cluster->getClusterRep(),setCluster);
 }
 
-std::vector<int> IRProject::ClusterBasedSummarizer::selectDocs(const std::vector<double> &finalScore)
+std::vector<int> IRProject::ClusterBasedSummarizer::selectMaximumDoc(const std::vector<double> &finalScore)
 {
 	std::vector<int> res;
 
@@ -125,4 +125,65 @@ std::vector<int> IRProject::ClusterBasedSummarizer::summarize()
 	std::vector<double> finalScore = computeSentencesScore(adjacencyMatrix);
 
 	return selectDocs(finalScore);
+}
+
+std::vector<int> IRProject::ClusterBasedSummarizer::selectDocs(const std::vector<double> &finalScore)
+{
+	std::vector<double> affiniyRank(finalScore);
+	std::vector<int> res;
+	std::vector<bool> isSelectedFlag(finalScore.size(), false);
+
+	Matrix similarityMatrix;
+	initialSimilarityMatrix(similarityMatrix);
+
+	while (res.size() != docsCount)
+	{
+		int selectedIndex = findMaxIndex(affiniyRank, isSelectedFlag);
+		res.push_back(selectedIndex);
+		isSelectedFlag[selectedIndex] = true;
+		for(int i = 1; i < finalScore.size(); i++)
+		{
+			affiniyRank[i] -= similarityMatrix[selectedIndex][i] * finalScore[selectedIndex];
+		}
+	}
+
+	return res;
+}
+
+int IRProject::ClusterBasedSummarizer::findMaxIndex(const std::vector<double> &scores, const std::vector<bool> &isSelectedFlags)
+{
+	double maxScore = -DBL_MAX;
+	int maxIndex = 0;
+	for(int d = 1 ; d < scores.size(); d++)
+	{
+		if(isSelectedFlags[d] == false && scores[d]> maxScore)
+		{
+			maxScore = scores[d];
+			maxIndex = d;
+		}
+	}
+	return maxIndex;
+}
+
+void IRProject::ClusterBasedSummarizer::initialSimilarityMatrix(Matrix &similarityMatrix)
+{
+	similarityMatrix.resize(docsCount+1);
+
+	for(int i = 1 ; i<= docsCount ; i++)
+	{
+		similarityMatrix[i].resize(docsCount+1);
+		ClusterRep docRepI(i,*index);
+		for(int j = 1 ; j<= docsCount ; j++)
+		{
+			if(i == j)
+				similarityMatrix[i][j] = 0;
+			else
+			{
+				ClusterRep docRepJ(j,*index);
+				similarityMatrix[i][j] = cosSim->similarity(&docRepI, &docRepJ);
+			}
+		}
+	}
+
+	normalize(similarityMatrix);
 }

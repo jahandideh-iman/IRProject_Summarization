@@ -32,9 +32,14 @@ void IRProject::ClusterBasedConditionalMarkovRandomWalk::initialAdjacencyMatrix(
 		ClusterRep docRepI(i,*index);
 		for(int j = 1 ; j<= docsCount ; j++)
 		{
-			ClusterRep docRepJ(j,*index);
-			double sim = cosSim->similarity(&docRepI, &docRepJ);
-			m[i][j] = sim * (lambda* docs[i].clusterInfo->weight * docs[i].weight) + ((1-lambda) * docs[j].clusterInfo->weight * docs[j].weight );
+			if(i == j)
+				m[i][j] = 0;
+			else
+			{
+				ClusterRep docRepJ(j,*index);
+				double sim = cosSim->similarity(&docRepI, &docRepJ);
+				m[i][j] = sim * (lambda* docs[i].clusterInfo->weight * docs[i].weight) + ((1-lambda) * docs[j].clusterInfo->weight * docs[j].weight );
+			}
 		}
 	}
 
