@@ -5,20 +5,25 @@
 using namespace std;
 
 
-void convertedDoc(string inFileName, string outFileName) {
-	fstream fin(inFileName.c_str());
-	fstream fout;
-	fout.open(outFileName.c_str(), fstream::out);
+void convertToLemurFormat(ifstream &in, ofstream &out) {
+
 	string line;
 	int count = 1;
-	while (std::getline(fin, line)) {
-		fout << "<DOC>\n<DOCNO> " << count
+	while (std::getline(in, line)) {
+		out << "<DOC>\n<DOCNO> " << count
 			<< " </DOCNO>\n<TEXT>\n" << line
 			<< "\n</TEXT>\n</DOC>\n\n";
 		count++;
 	}
-	fout.flush();
-	fout.close();
+
+}
+
+void removeTweetMetaData(ifstream &in, ofstream &out)
+{
+	string line;
+	while (std::getline(in, line)) {
+		//TODO: write your code here.
+	}
 }
 
 int main(int argc, char* argv[]) 
@@ -32,7 +37,19 @@ int main(int argc, char* argv[])
 	string inputPath = argv[1];
 	string outputPath = argv[2];
 
-	convertedDoc(inputPath, outputPath);
+	ifstream input(inputPath);
+	ofstream output(outputPath);
+	
+	if(input.is_open()==false || output.is_open()==false)
+	{
+		std::cerr << "Could Not open file" << std::endl;
+		return -1;
+	}
+
+	//convertToLemurFormat(input, output);
+	removeTweetMetaData(input, output);
+
+	output.close();
 
 	return 0;
 }
